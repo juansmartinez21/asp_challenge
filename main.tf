@@ -28,3 +28,12 @@ module "lamba" {
 module "s3_bucket_access" {
     source = "./modules/cloud_front_oai"
 }
+
+#S3 Configuration
+module "s3_bucket" {
+    source = "./modules/s3"
+    bucket_name = var.s3_bucket_name
+    oai_iam_arn = module.s3_bucket_access.output_oai_iam_arn
+}
+
+
