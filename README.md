@@ -133,7 +133,7 @@ If you run in a succesfull way, you are going to get a cloudfront url, one time 
 <!-- CONTACT -->
 ## Contact
 
-Juan Sebastian Martinez - [@juansmartinez21](https://www.linkedin.com/in/juansebastianmartinezcaldas/) - juansmartinez21@outlookes.es
+Juan Sebastian Martinez - [@juansmartinez21](https://www.linkedin.com/in/juansebastianmartinezcaldas/) - juansmartinez21@outlook.es
 
 Project Link: [https://github.com/juansmartinez21/asp_challenge.git](https://github.com/juansmartinez21/asp_challenge.git)
 
