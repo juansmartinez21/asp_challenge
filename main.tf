@@ -36,4 +36,11 @@ module "s3_bucket" {
     oai_iam_arn = module.s3_bucket_access.output_oai_iam_arn
 }
 
+#Upload content to S3 Bucket.
+module "bucket_content" {
+    source = "./modules/bucket_content"
+    bucket_id = module.s3_bucket.output_bucket_id
+}
+
+
 
