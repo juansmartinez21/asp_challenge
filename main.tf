@@ -24,3 +24,7 @@ module "lamba" {
   password = module.ssm.output_parameter_store_value
 }
 
+#OAI Cloudfront
+module "s3_bucket_access" {
+    source = "./modules/cloud_front_oai"
+}
