@@ -16,3 +16,11 @@ module "ssm" {
   source = "./modules/ssm"
   user_password = module.generate_random_password.output_password_generated
 }
+
+#edge Lambda for auth 
+module "lamba" {
+  source = "./modules/lambda_function"
+  user = var.user
+  password = module.ssm.output_parameter_store_value
+}
+
