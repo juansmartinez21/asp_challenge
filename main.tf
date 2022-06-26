@@ -51,6 +51,17 @@ module "cloudfrount_distribution" {
     lambda_arn = module.lamba.output_lambda_arn
 }
 
+#Get data account
+data "aws_caller_identity" "current" {}
+
+#Add new user with grants: S3 -upload Objects- and Cloudfrount - Access to disable dist.
+module "s3_add_user" {
+    source = "./modules/s3_user"
+    origin_id   = data.aws_caller_identity.current.account_id
+    bucket_name = var.s3_bucket_name  
+    cloudfront_distribution_id = module.cloudfrount_distribution.output_cloudfront_distribution_id
+}
+
 
 
 
