@@ -4,3 +4,10 @@ provider "aws" {
     region = var.region
 }
 
+#Modules
+
+#Generate a random password
+module "generate_random_password" {
+  source = "./modules/random_password"
+}
+
