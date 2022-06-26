@@ -42,5 +42,15 @@ module "bucket_content" {
     bucket_id = module.s3_bucket.output_bucket_id
 }
 
+#cloudfront configuration
+module "cloudfrount_distribution" {
+    source = "./modules/cloud_front"
+    bucket_regional_domain_name = module.s3_bucket.output_bucket_regional_domain_name
+    bucket_id = module.s3_bucket.output_bucket_id
+    cloudfront_access_identity_path = module.s3_bucket_access.output_oai_path
+    lambda_arn = module.lamba.output_lambda_arn
+}
+
+
 
 
