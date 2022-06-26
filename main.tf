@@ -11,3 +11,8 @@ module "generate_random_password" {
   source = "./modules/random_password"
 }
 
+#Store password in param store
+module "ssm" {
+  source = "./modules/ssm"
+  user_password = module.generate_random_password.output_password_generated
+}
